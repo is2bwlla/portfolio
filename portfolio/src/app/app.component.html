@@ -1,4 +1,4 @@
-<div class="flex bg-black flex-col items-center">
+<div class="flex bg-black flex-col items-center p-6">
     <div class="w-[65%] flex flex-col gap-5">
         <nav class="border-2 border-[#DA7188] rounded-md p-5">
             <ul class="flex items-center justify-evenly">
@@ -9,7 +9,7 @@
         </nav>
     
         <!-- PASTA DAS MINHAS INFORMAÇÕES -->
-        <div class="pt-10 flex justify-center flex-col relative">
+        <div class="pt-8 flex justify-center flex-col relative">
             <div class="h-12 flex w-full">
                 <div class="w-[20%] h-[13%] p-3 bg-[#DA7188] rounded-2xl right-0 absolute z-30 text-center text-lg text-white">ABOUT ME</div>
                 <div class="w-[20%] h-[13%] p-3 bg-[#F4939F] rounded-2xl right-24 absolute z-20 text-center text-lg text-white">PROJECTS</div>
@@ -66,8 +66,50 @@
             <div class="flex">
                 <div class="border-1 border-[#DA7188] w-0 h-25"></div>
                 <div class="flex flex-col self-center pl-4">
-                    <h3 class="text-red-600 font-semibold">ROBERT BOSCH</h3>
-                    <p class="text-gray-400">Minha primeira experiência no mercado de trabalho foi na multincaional alemã Robert Bosch, através do programa de jovem aprendiz da empresa. Fiz desenvolvimento de sistemas 1/2 período no SENAI e mais 1/2 período na própria empresa.</p>
+                    <div class="flex gap-5">
+                        <div class="relative"> 
+                            <button (click)="toggleVisibility('frontend')" class="w-30 text-white border border-white p-2 rounded cursor-pointer hover:bg-[#DA7188] hover:scale-105 transition-transform duration-300 ease-in-out">FRONT-END</button>
+                          
+                            <div *ngIf="isVisible === 'frontend'" 
+                                 class="absolute left-0 mt-2 w-30 bg-gray-800 text-white shadow-lg rounded transition-opacity duration-300 p-2">
+
+                                <ul class="space-y-1">
+                                    <li class="p-2 hover:bg-gray-700 rounded">HTML</li>
+                                    <li class="p-2 hover:bg-gray-700 rounded">CSS</li>
+                                    <li class="p-2 hover:bg-gray-700 rounded">JavaScript</li>
+                                    <li class="p-2 hover:bg-gray-700 rounded">Angular</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <button (click)="toggleVisibility('backend')" class="w-30 text-white border border-white p-2 rounded cursor-pointer hover:bg-[#DA7188] hover:scale-105 transition-transform duration-300 ease-in-out">BACK-END</button>
+
+                            <div *ngIf="isVisible === 'backend'" 
+                                 class="absolute left-0 mt-2 w-30 bg-gray-800 text-white shadow-lg rounded transition-opacity duration-300 p-2">
+
+                                <ul class="space-y-1">
+                                    <li class="p-2 hover:bg-gray-700 rounded">HTML</li>
+                                    <li class="p-2 hover:bg-gray-700 rounded">CSS</li>
+                                    <li class="p-2 hover:bg-gray-700 rounded">JavaScript</li>
+                                    <li class="p-2 hover:bg-gray-700 rounded">Angular</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <button (click)="toggleVisibility('others')" class="w-30 text-white border border-white p-2 rounded cursor-pointer hover:bg-[#DA7188] hover:scale-105 transition-transform duration-300 ease-in-out">OTHERS</button>
+
+                            <div *ngIf="isVisible === 'others'" class="absolute left-0 mt-2 w-30 bg-gray-800 text-white shadow-lg rounded transition-opacity duration-300 p-2">
+                                <ul class="space-y-1">
+                                    <li class="p-2 hover:bg-gray-700 rounded">HTML</li>
+                                    <li class="p-2 hover:bg-gray-700 rounded">CSS</li>
+                                    <li class="p-2 hover:bg-gray-700 rounded">JavaScript</li>
+                                    <li class="p-2 hover:bg-gray-700 rounded">Angular</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -80,7 +122,4 @@
                 </div>
             </div>
          </div>
-        
-    
-
 </div>
